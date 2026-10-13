@@ -7,9 +7,24 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
-ARQUIVO_DADOS = 'editais_conhecidos.json'
+# Configuração da API do Gemini
+try:
+    import google.generativeai as genai
+    GEMINI_KEY = os.environ.get('GEMINI_API_KEY')
+    if GEMINI_KEY:
+        genai.configure(api_key=GEMINI_KEY)
+        model = genai.GenerativeModel('gemini-1.5-flash')
+    else:
+        model = None
+except Exception as e:
+    print(f"Aviso ao carregar biblioteca Gemini: {e}")
+    model = None
 
-# Dicionário completo com públicas, privadas e telemáticas
+ARQUIVO_DADOS = 'editais_conhecidos.json'
+ARQUIVO_MARKDOWN = 'novos_editais.md'
+EMAIL_DESTINATARIO = "vitoriacampioniedu@gmail.com"
+
+# Lista com as 97 universidades italianas
 SITES_UNIVERSIDADES = {
     "publicas": {
         "Sapienza Università di Roma": "https://www.uniroma1.it/it/notizia/corsi-di-studio-ammissioni-2026-2027",
@@ -101,8 +116,6 @@ SITES_UNIVERSIDADES = {
     }
 }
 
-EMAIL_DESTINATARIO = "vitoriacampioniedu@gmail.com"
-
 def carregar_dados():
     if os.path.exists(ARQUIVO_DADOS):
         try:
@@ -116,27 +129,78 @@ def salvar_dados(dados):
     with open(ARQUIVO_DADOS, 'w', encoding='utf-8') as f:
         json.dump(dados, f, indent=4, ensure_ascii=False)
 
+def resumir_com_gemini(url_edital, titulo):
+    if not model:
+        return "Resumo de IA indisponível (chave GEMINI_API_KEY não configurada ou erro no módulo)."
+    
+    try:
+        headers = {'User-Agent': 'Mozilla/5.0'}
+        resp = requests.get(url_edital, headers=headers, timeout=10)
+        soup = BeautifulSoup(resp.text, 'html.parser')
+        
+        texto_pagina = soup.get_text(separator=' ', strip=True)[:4000]
+        
+        prompt = f"""
+        Você é um assistente especialista em admissões universitárias italianas.
+        Analise o texto abaixo extraído da página do edital "{titulo}" ({url_edital}).
+        
+        Faça um resumo bem conciso em Português com os seguintes tópicos em marcadores:
+        - 🎓 Cursos/Graus mencionados
+        - 📅 Prazos principais (início e fim de inscrições)
+        - 📜 Requisitos (idioma, documentos, exames)
+        - 💡 Destaques/Observações importantes
+        
+        Texto da página:
+        {texto_pagina}
+        """
+        
+        resposta = model.generate_content(prompt)
+        return resposta.text.strip()
+    except Exception as e:
+        return f"Não foi possível resumir automaticamente: {e}"
+
+def atualizar_markdown(novos_editais):
+    conteudo_novo = "# 🇮🇹 Relatório Diário de Editais (Resumo Gemini IA)\n\n"
+    
+    for universidade, links in novos_editais.items():
+        conteudo_novo += f"## 🏫 {universidade}\n\n"
+        for item in links:
+            conteudo_novo += f"### 📄 [{item['titulo']}]({item['url']})\n\n"
+            conteudo_novo += f"**Resumo Gerado por IA:**\n\n{item.get('resumo', 'Sem resumo disponível.')}\n\n"
+            conteudo_novo += "---\n\n"
+
+    if os.path.exists(ARQUIVO_MARKDOWN):
+        with open(ARQUIVO_MARKDOWN, 'r', encoding='utf-8') as f:
+            conteudo_antigo = f.read()
+    else:
+        conteudo_antigo = ""
+
+    with open(ARQUIVO_MARKDOWN, 'w', encoding='utf-8') as f:
+        f.write(conteudo_novo + "\n" + conteudo_antigo)
+
 def enviar_email(novos_editais):
     remetente = os.environ.get('EMAIL_REMETENTE')
     senha_app = os.environ.get('SENHA_APP_GMAIL')
 
     if not remetente or not senha_app:
-        print("Aviso: Credenciais de e-mail não configuradas nos Secrets.")
+        print("Aviso: Credenciais de e-mail não configuradas.")
         return
 
     msg = MIMEMultipart()
     msg['From'] = remetente
     msg['To'] = EMAIL_DESTINATARIO
-    msg['Subject'] = "🔔 Novos Editais de Universidades Italianas Encontrados!"
+    msg['Subject'] = "🤖 Resumo Diário de IA: Novos Editais Encontrados!"
 
-    corpo = "Olá! O seu monitor encontrou novos editais publicados:\n\n"
+    corpo = "Olá, Vitória!\n\nO seu monitor encontrou novos editais e a IA do Gemini gerou os seguintes resumos:\n\n"
     for universidade, links in novos_editais.items():
         corpo += f"=== {universidade} ===\n"
         for item in links:
-            corpo += f"- {item['titulo']}\n  Link: {item['url']}\n"
-        corpo += "\n"
+            corpo += f"\n📌 {item['titulo']}\nLink: {item['url']}\n\n"
+            corpo += f"RESUMO DA IA:\n{item.get('resumo', 'Sem resumo.')}\n"
+            corpo += "-"*40 + "\n"
 
-    corpo += "\nAbra os editais e adicione os PDFs no Gemini Notebook para extrair os prazos e requisitos!"
+    corpo += "\n\nVocê também pode copiar estes links e adicionar no seu Gemini Notebook:\nhttps://gemini.google.com/notebook/d52b210c-7939-418f-a725-e86113d0a1a5"
+
     msg.attach(MIMEText(corpo, 'plain', 'utf-8'))
 
     try:
@@ -145,7 +209,7 @@ def enviar_email(novos_editais):
         servidor.login(remetente, senha_app)
         servidor.sendmail(remetente, EMAIL_DESTINATARIO, msg.as_string())
         servidor.quit()
-        print("E-mail de notificação enviado com sucesso!")
+        print("E-mail com resumo enviado com sucesso!")
     except Exception as e:
         print(f"Falha ao enviar e-mail: {e}")
 
@@ -153,10 +217,8 @@ def monitorar():
     editais_salvos = carregar_dados()
     novidades_por_universidade = {}
     termos_busca = ['bando', 'ammissione', 'concorso', 'iscrizion', 'call']
-
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
 
-    # Percorre as categorias (publicas, privadas, telematicas) e depois cada universidade
     for categoria, universidades in SITES_UNIVERSIDADES.items():
         for universidade, url in universidades.items():
             print(f"[{categoria.upper()}] Verificando: {universidade}...")
@@ -181,12 +243,17 @@ def monitorar():
                         if link_completo not in editais_salvos[universidade]:
                             editais_salvos[universidade].append(link_completo)
                             
+                            titulo_edital = link.get_text().strip() or "Edital de Ammissione"
+                            print(f" -> Novo edital encontrado! Solicitando resumo ao Gemini...")
+                            resumo_ia = resumir_com_gemini(link_completo, titulo_edital)
+                            
                             if universidade not in novidades_por_universidade:
                                 novidades_por_universidade[universidade] = []
                             
                             novidades_por_universidade[universidade].append({
-                                'titulo': link.get_text().strip() or "Acesse o edital",
-                                'url': link_completo
+                                'titulo': titulo_edital,
+                                'url': link_completo,
+                                'resumo': resumo_ia
                             })
 
             except Exception as e:
@@ -194,9 +261,10 @@ def monitorar():
 
     if novidades_por_universidade:
         salvar_dados(editais_salvos)
+        atualizar_markdown(novidades_por_universidade)
         enviar_email(novidades_por_universidade)
     else:
-        print("Nenhum edital novo encontrado nesta rodada.")
+        print("Nenhum edital novo encontrado.")
 
 if __name__ == "__main__":
     monitorar()
