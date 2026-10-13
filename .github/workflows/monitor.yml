@@ -38,5 +38,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          touch editais_conhecidos.json novos_editais.md
           git add editais_conhecidos.json novos_editais.md
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Adiciona novos resumos de editais gerados por IA" && git push)
+          git commit -m "Adiciona novos resumos de editais gerados por IA" || echo "Sem alteracoes para commitar"
+          git push || echo "Nada para publicar"
