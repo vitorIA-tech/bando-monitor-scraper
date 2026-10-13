@@ -1,0 +1,41 @@
+name: Monitor de Editais Italianos
+
+on:
+  schedule:
+    # Roda todo dia às 8h da manhã (horário de Brasília)
+    - cron: '0 11 * * *'
+  workflow_dispatch: 
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Puxar os arquivos do repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar o Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Instalar as bibliotecas
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+
+      - name: Rodar o cacador de editais
+        env:
+          EMAIL_REMETENTE: ${{ secrets.EMAIL_REMETENTE }}
+          SENHA_APP_GMAIL: ${{ secrets.SENHA_APP_GMAIL }}
+        run: python scraper.py
+
+      - name: Salvar a memoria do robo (JSON)
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add editais_conhecidos.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Salva novos editais encontrados" && git push)
