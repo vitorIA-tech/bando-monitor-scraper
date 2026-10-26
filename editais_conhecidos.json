@@ -306,7 +306,9 @@
         "https://studenticattolica.unicatt.it/iscrizioni-passaggi-sospensione-degli-studi-rinuncia-studi",
         "https://studenticattolica.unicatt.it/iscrizioni-passaggi-sospensione-degli-studi-sospensione-e-interruzione-degli-studi",
         "https://www.unicatt.it/ammissione/orientamento/informazioni-lauree-triennali-e-a-ciclo-unico.html",
-        "https://www.unicatt.it/ammissione/orientamento/informazioni-lauree-magistrali.html"
+        "https://www.unicatt.it/ammissione/orientamento/informazioni-lauree-magistrali.html",
+        "https://www.unicatt.it/unicatt.esse3.cineca.it/auth/Enrollment/EImmatricolazioneNewAction.do",
+        "https://idp.unicatt.it/f524aa82-2b72-4efa-bd8c-39c0929287ce/B2C_1A_RP_SIGNIN/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Flogin.unicatt.it%2Fb2c%2Fcallback&client_id=006ee247-8160-4704-92d4-bd652d3cd3dd&response_type=code&response_mode=query&scope=006ee247-8160-4704-92d4-bd652d3cd3dd%20offline_access&state=RktLTFhSUUVaTExIRkItRtTqOnyqa0YQyjsCe1Zli2UAn4guJApAdveiqn0AxF1FEXdrzI9%2FhDlb9cNxd8Qc%2FY07HXxV%2F0H6PK3VYErdQ%3D%3D&post_login_hint=RktLTFhSUUVaTExIRkItRtTqOnyqa0YQyjsCe1Zli2UAn4guJApAdveiqn0AxF1FEXdrzI9%2FhDlb9cNxd8Qc%2FY07HXxV%2F0H6PK3VYErdQ%3D%3D/content/unicatt/it/portale-iscrizioni"
     ],
     "Università Vita-Salute San Raffaele (Milão)": [],
     "Humanitas University (Milão)": [],
