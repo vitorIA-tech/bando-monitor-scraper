@@ -1,5 +1,18 @@
 # 🇮🇹 Relatório Diário de Editais (Resumo Gemini IA)
 
+## 🏫 Università Bocconi (Milão)
+
+### 📄 [Esiti e immatricolazione](https://www.unibocconi.it/it/entrare-bocconi/corsi-di-laurea-triennale-e-giurisprudenza/ammissione/esiti-e-immatricolazione-2027-28)
+
+**Resumo Gerado por IA:**
+
+Não foi possível resumir automaticamente: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+---
+
+
+# 🇮🇹 Relatório Diário de Editais (Resumo Gemini IA)
+
 ## 🏫 Università Cattolica del Sacro Cuore
 
 ### 📄 [Portale iscrizioni di Medicina e chirurgia](https://www.unicatt.it/unicatt.esse3.cineca.it/auth/Enrollment/EImmatricolazioneNewAction.do)
