@@ -12,7 +12,7 @@ try:
     import google.generativeai as genai
     GEMINI_KEY = os.environ.get('GEMINI_API_KEY')
     if GEMINI_KEY:
-        genai.configure(api_key=GEMINI_KEY)
+                genai.configure(api_key=GEMINI_KEY)
         model = genai.GenerativeModel('gemini-1.5-flash')
     else:
         model = None
