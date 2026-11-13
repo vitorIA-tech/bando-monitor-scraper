@@ -1,5 +1,106 @@
 # 🇮🇹 Relatório Diário de Editais (Resumo Gemini IA)
 
+## 🏫 Università Europea di Roma (UER)
+
+### 📄 [Prenota test di ammissione](https://www.uer.it/entra-in-uer/test-ammissione/)
+
+**Resumo Gerado por IA:**
+
+Não foi possível resumir automaticamente: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+---
+
+### 📄 [compila online la domanda di ammissione](https://unier.esse3.cineca.it/AddressBook/ABStartProcessoRegAction.do)
+
+**Resumo Gerado por IA:**
+
+Não foi possível resumir automaticamente: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+---
+
+### 📄 [guida all’iscrizione al Test di Ammissione](https://www.universitaeuropeadiroma.it/wp-content/uploads/2017/11/Guida-iscrizione-Test_UER.pdf)
+
+**Resumo Gerado por IA:**
+
+Não foi possível resumir automaticamente: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+---
+
+### 📄 [istruzioni per lo svolgimento del Test di Ammissione](https://www.universitaeuropeadiroma.it/wp-content/uploads/2017/11/Istruzioni-Svolgimento-della-prova-2022-1.pdf)
+
+**Resumo Gerado por IA:**
+
+Não foi possível resumir automaticamente: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+---
+
+### 📄 [procedure di ammissione per gli studenti stranieri](https://www.uer.it/international/international-students/)
+
+**Resumo Gerado por IA:**
+
+Não foi possível resumir automaticamente: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+---
+
+### 📄 [Bando di ammissione](https://www.uer.it/medicina/ammissioni/)
+
+**Resumo Gerado por IA:**
+
+Não foi possível resumir automaticamente: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+---
+
+### 📄 [Bando di ammissione](https://www.universitaeuropeadiroma.it/fisioterapia/ammissioni/)
+
+**Resumo Gerado por IA:**
+
+Não foi possível resumir automaticamente: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+---
+
+### 📄 [Prenota simulazione](https://www.uer.it/laurea/simulazione-prova-ammissione-scienze-formazione-primaria/)
+
+**Resumo Gerado por IA:**
+
+Não foi possível resumir automaticamente: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+---
+
+### 📄 [Prenota test di ammissione](https://www.uer.it/laurea/test-ammissione-psicologia-magistrale/)
+
+**Resumo Gerado por IA:**
+
+Não foi possível resumir automaticamente: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+---
+
+### 📄 [guida alle ammissioni lauree magistrali](https://www.universitaeuropeadiroma.it/wp-content/uploads/2017/11/Guida-iscrizione-ammissioni-magistrali-UER_2022.pdf)
+
+**Resumo Gerado por IA:**
+
+Não foi possível resumir automaticamente: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+---
+
+### 📄 [procedure di ammissione per gli studenti stranieri](https://www.uer.it/studying-a-masters-degree/)
+
+**Resumo Gerado por IA:**
+
+Não foi possível resumir automaticamente: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+---
+
+### 📄 [Prenota colloquio ammissione](https://www.uer.it/laurea/colloquio-ammissione-economia-magistrale/)
+
+**Resumo Gerado por IA:**
+
+Não foi possível resumir automaticamente: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+---
+
+
+# 🇮🇹 Relatório Diário de Editais (Resumo Gemini IA)
+
 ## 🏫 Università degli Studi "G. d'Annunzio" Chieti-Pescara
 
 ### 📄 [Edital de Ammissione](https://x.com/intent/tweet?text=&url=https%3A%2F%2Fwww.unich.it%2Fdidattica%2Fiscrizioni)
