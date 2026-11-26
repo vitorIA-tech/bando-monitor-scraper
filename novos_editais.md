@@ -1,5 +1,58 @@
 # 🇮🇹 Relatório Diário de Editais (Resumo Gemini IA)
 
+## 🏫 Università Politecnica delle Marche (Univpm)
+
+### 📄 [Contemporanea iscrizione](https://www.univpm.it/Entra/Didattica/Contemporanea_iscrizione)
+
+**Resumo Gerado por IA:**
+
+Não foi possível resumir automaticamente: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+---
+
+### 📄 [Immatricolazioni e test di ammissione](https://www.univpm.it/Entra/Didattica/5_passi_per_iscriverti_a_UNIVPM)
+
+**Resumo Gerado por IA:**
+
+Não foi possível resumir automaticamente: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+---
+
+### 📄 [Ammissione ai corsi di laurea](https://www.univpm.it/Entra/Didattica/Bandi_in_scadenza/Ammissione_ai_corsi_di_laurea)
+
+**Resumo Gerado por IA:**
+
+Não foi possível resumir automaticamente: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+---
+
+### 📄 [Bando di Concorso](https://www.univpm.it/Entra/Didattica/Bandi_in_scadenza/Concorsi_Dottorato_di_ricerca)
+
+**Resumo Gerado por IA:**
+
+Não foi possível resumir automaticamente: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+---
+
+### 📄 [Bando di concorso](https://www.univpm.it/Entra/Ricerca/Dottorato_di_Ricerca_/Bando_di_Concorso_Dottorato_di_ricerca)
+
+**Resumo Gerado por IA:**
+
+Não foi possível resumir automaticamente: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+---
+
+### 📄 [Bando Erasmus + PTA - a.a. 2026-2027](https://www.univpm.it/Entra/Ingresso_all_Universita/Bando_Erasmus_PTA)
+
+**Resumo Gerado por IA:**
+
+Não foi possível resumir automaticamente: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+---
+
+
+# 🇮🇹 Relatório Diário de Editais (Resumo Gemini IA)
+
 ## 🏫 Università Cattolica del Sacro Cuore
 
 ### 📄 [Leggi le domande frequenti](https://www.unicatt.it/ammissione/iscrizione/faq-lt.html)

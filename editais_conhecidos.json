@@ -240,7 +240,14 @@
     "Università degli Studi della Basilicata (Unibas)": [],
     "Università degli Studi del Sannio (Unisannio)": [],
     "Università Magna Græcia di Catanzaro (UMG)": [],
-    "Università Politecnica delle Marche (Univpm)": [],
+    "Università Politecnica delle Marche (Univpm)": [
+        "https://www.univpm.it/Entra/Didattica/Contemporanea_iscrizione",
+        "https://www.univpm.it/Entra/Didattica/5_passi_per_iscriverti_a_UNIVPM",
+        "https://www.univpm.it/Entra/Didattica/Bandi_in_scadenza/Ammissione_ai_corsi_di_laurea",
+        "https://www.univpm.it/Entra/Didattica/Bandi_in_scadenza/Concorsi_Dottorato_di_ricerca",
+        "https://www.univpm.it/Entra/Ricerca/Dottorato_di_Ricerca_/Bando_di_Concorso_Dottorato_di_ricerca",
+        "https://www.univpm.it/Entra/Ingresso_all_Universita/Bando_Erasmus_PTA"
+    ],
     "Università del Piemonte Orientale (UPO)": [],
     "Politecnico di Milano (Polimi)": [
         "https://www.polimi.it/futuri-studenti/test-e-ammissione",
